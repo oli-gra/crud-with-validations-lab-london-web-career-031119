@@ -1,9 +1,4 @@
 class SongsController < ApplicationController
-   begin
-      @@n+1
-   rescue
-      @@n=1
-   end
 
    def index
       @songs = Song.all
@@ -12,7 +7,6 @@ class SongsController < ApplicationController
       @song = Song.find(params[:id])
    end
    def new
-      @instance = @@n
       @song = Song.new
    end
    def create
